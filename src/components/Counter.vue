@@ -11,7 +11,7 @@
     <h2>mapState: {{ count }}</h2>
     <h2>lastMutation: {{ lastMutation }}</h2>
 
-    <h2>Direct getter: {{ $store.getters.squareCount }}</h2>
+    <h2>Direct getter: {{ $store.getters['counter/squareCount'] }}</h2>
 </template>
 
 <script>
@@ -23,7 +23,7 @@
             countComputed() {
                 return this.$store.state.counter.count
             },
-            ...mapState('conter', ['count', 'lastMutation', 'isLoading'])
+            ...mapState('counter', ['count', 'lastMutation', 'isLoading'])
             // ...mapState({
             //     count: state => state.count,
             //     lastMutation: state => state.lastMutation
